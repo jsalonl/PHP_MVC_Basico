@@ -1,0 +1,8 @@
+[06-Sep-2021 21:42:41 America/Bogota] LoginModel::login->Password no es igual
+[06-Sep-2021 21:45:30 America/Bogota] PHP Notice:  Undefined property: Clients::$users in C:\laragon\www\pagos\controllers\clients.php on line 116
+[06-Sep-2021 21:45:30 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in C:\laragon\www\pagos\controllers\clients.php:116
+Stack trace:
+#0 C:\laragon\www\pagos\libs\app.php(45): Clients->remove()
+#1 C:\laragon\www\pagos\index.php(20): App->__construct()
+#2 {main}
+  thrown in C:\laragon\www\pagos\controllers\clients.php on line 116

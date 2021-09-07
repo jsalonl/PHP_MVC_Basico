@@ -1,0 +1,48 @@
+{
+  "sites":[
+    {
+      "site": "",
+      "access": "public",
+      "role": ""
+    },
+    {
+      "site": "signup",
+      "access": "public",
+      "role": ""
+    },
+    {
+      "site": "dashboard",
+      "access": "private",
+      "role": "admin"
+    },
+    {
+      "site": "dashboard",
+      "access": "private",
+      "role": "cobrador"
+    },
+    {
+      "site": "users",
+      "access": "private",
+      "role": "admin"
+    },
+    {
+      "site": "profile",
+      "access": "private",
+      "role": "admin"
+    },
+    {
+      "site": "profile",
+      "access": "private",
+      "role": "cobrador"
+    },
+    {
+      "site": "clients",
+      "access": "private",
+      "role": "admin"
+    }
+  ],
+  "default-sites":{
+    "admin": "dashboard",
+    "reseller": "reseller"
+  }
+}
