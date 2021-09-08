@@ -22,7 +22,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo constant('URL');?>/">
+              <a class="nav-link" href="<?php echo constant('URL');?>/loans">
                 <i class="menu-icon typcn typcn-document-text"></i>
                 <span class="menu-title">Prestamos</span>
               </a>

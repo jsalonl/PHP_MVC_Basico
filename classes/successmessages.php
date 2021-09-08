@@ -9,6 +9,9 @@ class SuccessMessages{
   const SUCCESS_CLIENTS_NEWCLIENT = "s_c_nu_2021_200";
   const SUCCESS_CLIENTS_UPDATECLIENT = "s_c_uc_2021_200";
   const SUCCESS_CLIENTS_REMOVECLIENT = "s_c_rc_2021_200";
+  const SUCCESS_LOANS_NEWLOAN = "s_l_nl_2021_200";
+  const SUCCESS_LOANS_UPDATELOAN = "s_l_ul_2021_200";
+  const SUCCESS_LOANS_REMOVELOAN = "s_l_rl_2021_200";
 
   private $successList = [];
   public function __construct(){
@@ -19,7 +22,10 @@ class SuccessMessages{
       SuccessMessages::SUCCESS_USERS_REMOVEUSER=>'Usuario eliminado satisfactoriamente',
       SuccessMessages::SUCCESS_CLIENTS_NEWCLIENT=>'Cliente creado satisfactoriamente',
       SuccessMessages::SUCCESS_CLIENTS_UPDATECLIENT=>'Cliente actualizado satisfactoriamente',
-      SuccessMessages::SUCCESS_CLIENTS_REMOVECLIENT=>'Cliente eliminado satisfactoriamente'
+      SuccessMessages::SUCCESS_CLIENTS_REMOVECLIENT=>'Cliente eliminado satisfactoriamente',
+      SuccessMessages::SUCCESS_LOANS_NEWLOAN=>'Préstamo creado satisfactoriamente',
+      SuccessMessages::SUCCESS_LOANS_UPDATELOAN=>'Préstamo actualizado satisfactoriamente',
+      SuccessMessages::SUCCESS_LOANS_REMOVELOAN=>'Préstamo eliminado satisfactoriamente'
     ];
   }
 

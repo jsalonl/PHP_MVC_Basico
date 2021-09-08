@@ -19,6 +19,8 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="<?php echo constant('URL');?>/views/assets/css/demo_1/style.css">
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="<?php echo constant('URL');?>/views/assets/css/custom.css">
     <!-- End Layout styles -->
     <!-- Favicons -->
     <link rel="shortcut icon" href="<?php echo constant('URL');?>/views/assets/images/favicon.ico" />

@@ -1,8 +1,7 @@
-[06-Sep-2021 21:42:41 America/Bogota] LoginModel::login->Password no es igual
-[06-Sep-2021 21:45:30 America/Bogota] PHP Notice:  Undefined property: Clients::$users in C:\laragon\www\pagos\controllers\clients.php on line 116
-[06-Sep-2021 21:45:30 America/Bogota] PHP Fatal error:  Uncaught Error: Call to a member function delete() on null in C:\laragon\www\pagos\controllers\clients.php:116
+[08-Sep-2021 17:38:05 America/Bogota] ClientModel::udpate->PDOException PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect datetime value: '' for column 'modified' at row 1 in C:\laragon\www\pagos\models\loanmodel.php:187
 Stack trace:
-#0 C:\laragon\www\pagos\libs\app.php(45): Clients->remove()
-#1 C:\laragon\www\pagos\index.php(20): App->__construct()
-#2 {main}
-  thrown in C:\laragon\www\pagos\controllers\clients.php on line 116
+#0 C:\laragon\www\pagos\models\loanmodel.php(187): PDOStatement->execute(Array)
+#1 C:\laragon\www\pagos\controllers\loans.php(109): LoanModel->update()
+#2 C:\laragon\www\pagos\libs\app.php(45): Loans->update()
+#3 C:\laragon\www\pagos\index.php(20): App->__construct()
+#4 {main}

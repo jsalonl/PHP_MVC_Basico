@@ -39,6 +39,11 @@
       "site": "clients",
       "access": "private",
       "role": "admin"
+    },
+    {
+      "site": "loans",
+      "access": "private",
+      "role": "admin"
     }
   ],
   "default-sites":{

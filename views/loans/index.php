@@ -1,7 +1,8 @@
 <?php
 $user = $this->d['user'];
-$users = $this->d['users'];
-$users_paginate = $this->d['users_paginate'];
+$loans = $this->d['loans'];
+$loans_paginate = $this->d['loans_paginate'];
+$term = $this->d['term'];
 ?>
 <?php 
   include('views/head.php');
@@ -15,19 +16,19 @@ $users_paginate = $this->d['users_paginate'];
     <div class="row page-title-header">
       <div class="col-12">
         <div class="page-header">
-          <h4 class="page-title">Módulo Usuarios</h4>
+          <h4 class="page-title">Módulo Préstamos</h4>
         </div>
       </div>
     </div>
 
     <div class="row mt-4">
       <div class="col col-md-12">
-        <form method="POST" action="<?php echo constant('URL');?>/users">
+        <form method="POST" action="<?php echo constant('URL');?>/loans">
           <div class="input-group">
             <div class="input-group-prepend">
-              <button type="button" onclick="add()" class="btn btn-md btn-primary">Agregar Usuario</button>
+              <button type="button" onclick="add()" class="btn btn-md btn-primary">Agregar Préstamo</button>
             </div>
-            <input type="text" name='term' class="form-control form-control-lg" placeholder="Buscar">
+            <input type="text" name='term' class="form-control form-control-lg" placeholder="Buscar" value="<?php echo $term?>">
             <div class="input-group-append bg-primary border-primary">
               <button class="btn btn-success" type="submit"><i class="mdi mdi-magnify text-white icon-md"></i></button>
             </div>
@@ -47,29 +48,29 @@ $users_paginate = $this->d['users_paginate'];
               <table class="col-sm-12 table table-hover table-striped table-condensed cf" width="100%">
                 <thead class="cf">
                   <tr>
-                    <th>Nombre</th>
-                    <th>Teléfono</th>
-                    <th>Estado</th>
-                    <th>Rol</th>
+                    <th>Cliente</th>
+                    <th>Valor Préstamo</th>
+                    <th>Valor a pagar</th>
+                    <th>Cuotas</th>
+                    <th>Valor pendiente</th>
+                    <th>Fecha</th>
+                    <th>Ultimo pago</th>
                     <th>Accion</th>
                   </tr>
                 </thead>
                 <tbody>
-                <?php if(!empty($users)): ?>
-                  <?php foreach($users as $row):?>
+                <?php if(!empty($loans)): ?>
+                  <?php foreach($loans as $row):?>
                     <tr>
-                      <td data-title="Nombre"><?php echo $row->getNombre()?></td>
-                      <td data-title="Teléfono"><?php echo $row->getTelefono()?></td>
-                      <td data-title="Estado">
-                        <?php if($row->getEstado()==0):?>
-                          <span class="badge badge-danger">Inactivo</span>
-                        <?php else:?>
-                          <span class="badge badge-success">Activo</span>
-                        <?php endif?>
-                      </td>
-                      <td data-title="Rol"><?php echo $row->getRol()?></td>
-                      <td data-title="Acción">
-                        <a href="<?php echo constant('URL').'/users/edit?id='.$row->getId();?>"><i class="mdi mdi-pencil text-warning icon-sm"></i></a>
+                      <td data-title="Cliente"><?php echo $row->getNombreCliente()?></td>
+                      <td data-title="Valor Préstamo"><?php echo $row->getValor()?></td>
+                      <td data-title="Valor a pagar"><?php echo $row->getValorTotal()?></td>
+                      <td data-title="Cuotas"><?php echo $row->getCuotas()?></td>
+                      <td data-title="Valor pendiente"><?php echo $row->getValorPendiente()?></td>
+                      <td data-title="Fecha"><?php echo $row->getCreated()?></td>
+                      <td data-title="Ultimo pago"><?php echo $row->getModified()?></td>
+                      <td data-title="Accion">
+                        <a href="<?php echo constant('URL').'/loans/edit?id='.$row->getId();?>"><i class="mdi mdi-pencil text-warning icon-sm"></i></a>
                         <a href="#" onclick="remove(<?php echo $row->getId() ?>);return false;"><i class="mdi mdi-close-circle text-danger icon-sm"></i></a>
                       </td>
                     </tr>
@@ -78,7 +79,7 @@ $users_paginate = $this->d['users_paginate'];
                 </tbody>
               </table>
               <div class="col-md-12 mt-2">
-                <?php echo $users_paginate ?>
+                <?php echo $loans_paginate ?>
               </div>
               <!-- -->
             </div>
@@ -92,12 +93,12 @@ $users_paginate = $this->d['users_paginate'];
   </div>
   <script>
     function add(){
-      window.location.href = 'users/add';
+      window.location.href = 'loans/add';
     }
 
     function remove(id){
       if (window.confirm("¿Seguro desea eliminar este registro?, se eliminará también los pagos recibidos")) {
-        window.location.href = 'users/remove?id='+id;
+        window.location.href = 'loans/remove?id='+id;
       }
     }
   </script>

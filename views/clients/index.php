@@ -44,9 +44,9 @@ $term = $this->d['term'];
         <div class="card">
           <div class="card-body">
 
-            <div class="col-md-12">
-              <table class="table table-hover table-striped table-responsive-sm" width="100%">
-                <thead>
+            <div id="no-more-tables">
+              <table class="col-sm-12 table table-hover table-striped table-condensed cf" width="100%">
+                <thead class="cf">
                   <tr>
                     <th>Identificación</th>
                     <th>Nombre</th>
@@ -59,11 +59,11 @@ $term = $this->d['term'];
                 <?php if(!empty($clients)): ?>
                   <?php foreach($clients as $row):?>
                     <tr>
-                      <td><?php echo $row->getIdentificacion()?></td>
-                      <td><?php echo $row->getNombre()?></td>
-                      <td><?php echo $row->getTelefono()?></td>
-                      <td><?php echo $row->getDireccion()?></td>
-                      <td>
+                      <td data-title="Identificación"><?php echo $row->getIdentificacion()?></td>
+                      <td data-title="Nombre"><?php echo $row->getNombre()?></td>
+                      <td data-title="Teléfono"><?php echo $row->getTelefono()?></td>
+                      <td data-title="Dirección"><?php echo $row->getDireccion()?></td>
+                      <td data-title="Accion">
                         <a href="<?php echo constant('URL').'/clients/edit?id='.$row->getId();?>"><i class="mdi mdi-pencil text-warning icon-sm"></i></a>
                         <a href="#" onclick="remove(<?php echo $row->getId() ?>);return false;"><i class="mdi mdi-close-circle text-danger icon-sm"></i></a>
                       </td>
@@ -71,14 +71,10 @@ $term = $this->d['term'];
                   <?php endforeach?>
                 <?php endif?>
                 </tbody>
-                <tfoot>
-                  <tr>
-                    <th colspan="5">
-                      <?php echo $clients_paginate ?>
-                    </th>
-                  </tr>
-                </tfoot>
               </table>
+              <div class="col-md-12 mt-2">
+                <?php echo $clients_paginate ?>
+              </div>
               <!-- -->
             </div>
 
